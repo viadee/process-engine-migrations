@@ -1,0 +1,62 @@
+{
+  "components": [
+    {
+      "text": "# Check invoice",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_17t0ut5",
+        "columns": null
+      },
+      "id": "Field_0j60kng"
+    },
+    {
+      "label": "Reason",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0rj3bsk",
+        "columns": null
+      },
+      "id": "Field_1s980oj",
+      "key": "reason",
+      "readonly": true
+    },
+    {
+      "label": "Amount",
+      "type": "number",
+      "layout": {
+        "row": "Row_03bd8n4",
+        "columns": 10
+      },
+      "id": "Field_1823sik",
+      "key": "amount",
+      "decimalDigits": 2,
+      "readonly": true,
+      "appearance": {
+        "suffixAdorner": "€"
+      }
+    },
+    {
+      "label": "Accept invoice?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1vaw9cm",
+        "columns": 8
+      },
+      "id": "Field_02ef94p",
+      "key": "accepted",
+      "validate": {
+        "required": false
+      }
+    }
+  ],
+  "type": "default",
+  "id": "invoice-form",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.22.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.21.0",
+  "schemaVersion": 16
+}

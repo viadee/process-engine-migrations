@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_0psz7r3" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.22.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21.0">
+  <decision id="invoiceDataValidation" name="Invoice Data Validation" camunda:historyTimeToLive="42">
+    <decisionTable id="DecisionTable_0j7jrfl" hitPolicy="FIRST">
+      <input id="Input_1" label="Amount (a)" biodi:width="192" camunda:inputVariable="a">
+        <inputExpression id="InputExpression_1" typeRef="double">
+          <text>amount</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1hi5xy3" label="Reason (r)" camunda:inputVariable="r">
+        <inputExpression id="LiteralExpression_1c9v9p6" typeRef="string">
+          <text>reason</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Is Valid?" typeRef="boolean" />
+      <rule id="DecisionRule_1j79fvu">
+        <inputEntry id="UnaryTests_0n7h31o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h2sdpt">
+          <text>""</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k5adnt">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ta89j3">
+        <inputEntry id="UnaryTests_1fwyj1e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zo7iff">
+          <text>not(is defined(r))</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ovl9ur">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zdkjex">
+        <inputEntry id="UnaryTests_17mhzhd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04owtj3">
+          <text>contains(r, "wichtig")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1skkzgt">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cw7uq4">
+        <inputEntry id="UnaryTests_10jhv2e">
+          <text>&lt; 1000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wc44g7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04e5y6p">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bvi1zi">
+        <inputEntry id="UnaryTests_17n5yv6">
+          <text>&gt;= 1000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l5oa3i">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kmdwcu">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="invoiceDataValidation">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
