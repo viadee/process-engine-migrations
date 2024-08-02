@@ -1,0 +1,38 @@
+### Invoice 37.50
+POST http://localhost:8080/invoice
+Content-Type: application/json
+
+{
+  "amount": 37.50,
+  "reason": "This is an invoice"
+}
+
+### Invoice 1420.11
+POST http://localhost:8080/invoice
+Content-Type: application/json
+
+{
+  "amount": 1420.11,
+  "reason": "This is another invoice"
+}
+
+### Important invoice, 1337,00
+POST http://localhost:8080/invoice
+Content-Type: application/json
+
+{
+  "amount": 1337.00,
+  "reason": "This is a very important invoice"
+}
+
+### All tasks
+GET http://localhost:8080/tasks
+Content-Type: application/json
+
+### Complete Task by id
+POST http://localhost:8080/tasks/complete/4dfcbcb-2f99-11ef-84a6-469c3675e7c7
+Content-Type: application/json
+
+{
+  "accepted": false
+}
